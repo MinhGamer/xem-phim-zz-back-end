@@ -4,14 +4,10 @@ const app = require('express')();
 
 const { getAllTodos } = require('./APIs/todos');
 
+// const { loginUser } = require('./APIs/users');
+
 app.get('/todos', getAllTodos);
 
-exports.api = functions.https.onRequest(app);
+// app.post('/login', loginUser);
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-exports.api = functions.https.onRequest((request, response) => {
-  functions.logger.info('Hello logs!', { structuredData: true });
-  response.send('Hello from Firebase!');
-});
+exports.api = functions.https.onRequest(app);
